@@ -1,6 +1,6 @@
 import { NavLink as ReactLink } from 'react-router-dom';
 
-import React from 'react';
+import React, { useState } from 'react';
 import {
   Collapse,
   Navbar,
@@ -15,21 +15,13 @@ import {
   DropdownItem, 
   NavbarText} from 'reactstrap';
 
-export default class CustomNavbar extends React.Component {
-  constructor(props) {
-    super(props);
+/**
+ * @Author created by ska first react project. 26/09/2023
+ * @returns 
+ */  
+const CustomNavbar = () =>{
+  const [isOpen,setIsOpen] = useState(false);
 
-    this.toggle = this.toggle.bind(this);
-    this.state = {
-      isOpen: false
-    };
-  }
-  toggle() {
-    this.setState({
-      isOpen: !this.state.isOpen
-    });
-  }
-  render() {
     return (
       <div>
         <Navbar color="dark" 
@@ -41,8 +33,8 @@ export default class CustomNavbar extends React.Component {
                        to="/Home">
                        MyBlog
           </NavbarBrand>
-          <NavbarToggler onClick={this.toggle} />
-          <Collapse isOpen={this.state.isOpen} navbar>
+          <NavbarToggler onClick={()=>setIsOpen(!isOpen)} />
+          <Collapse isOpen={isOpen} navbar>
             <Nav className="ml-auto" navbar>
               <NavItem>
                 <NavLink tag={ReactLink} to="/About">About</NavLink>
@@ -71,6 +63,7 @@ export default class CustomNavbar extends React.Component {
           </Collapse>
         </Navbar>
       </div>
-    );
-  }
+      ); 
 }
+
+export default CustomNavbar;

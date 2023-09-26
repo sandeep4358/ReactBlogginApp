@@ -12,6 +12,7 @@ import Login from './pages/login';
 
 function App() {
   return (
+    //ska here we have define the router for differenent component to be navigate
     <BrowserRouter>
       <Routes>
           <Route path='Home' element={<Home></Home>}/>

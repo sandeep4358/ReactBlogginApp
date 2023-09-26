@@ -4,11 +4,12 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import About from './pages/about';
-import 'bootstrap/dist/css/bootstrap.css';
+import 'bootstrap/dist/css/bootstrap.css';  // added by ska for Custom Nav bar was not working without CSS 26/09/2023
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
+  //ska need to check what is strick mode. 
   <React.StrictMode>
      <App/>       
   </React.StrictMode>
