@@ -19,6 +19,7 @@ import {
  * @Author created by ska first react project. 26/09/2023
  * @returns 
  */  
+
 const CustomNavbar = () =>{
   const [isOpen,setIsOpen] = useState(false);
 
